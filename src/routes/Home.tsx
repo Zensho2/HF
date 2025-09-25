@@ -14,7 +14,8 @@ export default function Home() {
         <div className={styles.overlay} />
         <div className={styles.noise} />
         <div className={styles.content}>
-          <div className={styles.tag}>Ingénierie & Construction Excellence et précision</div>
+          <div className={styles.tag}><strong>AU-DELÀ DE LA CONSTRUCTION</strong></div>
+          <div className={styles.tag2}>Expertise dans votre projet de construction de l’AVP à la livraison</div>
         </div>
       </div>
 

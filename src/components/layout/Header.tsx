@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './Header.module.css'
 
@@ -9,8 +10,42 @@ const nav = [
 ]
 
 export default function Header() {
+  const [showHeader, setShowHeader] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // scrolling down → hide
+        setShowHeader(false)
+      } else {
+        // scrolling up → show
+        setShowHeader(true)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const screenHeight = window.innerHeight
+      if (e.clientY < screenHeight / 4) {
+        setShowHeader(true)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [lastScrollY])
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${showHeader ? styles.visible : styles.hidden}`}>
       <div className={styles.row}>
         <div className={styles.logoBox}>LOGO</div>
         <nav className={styles.nav}>
@@ -32,6 +67,3 @@ export default function Header() {
     </header>
   )
 }
-
-
-
