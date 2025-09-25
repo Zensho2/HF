@@ -1,0 +1,14 @@
+.textarea {
+  width: 100%;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--main);
+}
+.textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--gold) 30%, transparent);
+}
+

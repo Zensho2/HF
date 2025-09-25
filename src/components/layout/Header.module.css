@@ -1,0 +1,45 @@
+.header {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  color: var(--main);
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.logoBox {
+  width: 100px;
+  height: 100px;
+  background: var(--white);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: var(--main);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.linkBox {
+  text-decoration: none;
+  color: var(--main);
+  border: 1px solid var(--main);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0;
+  font-weight: 700;
+  background: transparent;
+}
+.linkBox:hover { background: color-mix(in oklab, var(--light) 35%, white); }
+.filled {
+  background: var(--light);
+  color: var(--main);
+  border-color: var(--light);
+}
+

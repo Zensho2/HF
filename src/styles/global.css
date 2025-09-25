@@ -1,0 +1,29 @@
+:root {
+  --main: #2B2D36; /* principal */
+  --white: #ffffff;
+  --light: #B4DCD4;
+  --gold: #F2CE7D;
+
+  --bg: var(--white);
+  --text: var(--main);
+  --muted: color-mix(in oklab, var(--main) 55%, white);
+  --border: color-mix(in oklab, var(--main) 15%, white);
+  --primary: var(--main);
+  --primary-contrast: var(--white);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: Lato, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+button { font: inherit; }
+input, textarea { font: inherit; }
+
+
